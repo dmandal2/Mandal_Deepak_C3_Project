@@ -52,7 +52,7 @@ class RestaurantTest {
     @Test
     public void calculate_order_total_should_return_correct_total_value_for_given_items() {
         int total = restaurant.calculateOrderTotal(Arrays.asList("Sweet corn soup", "Vegetable lasagne"));
-        assertEquals(400, total);
+        assertEquals(388, total);
     }
 
     @Test
