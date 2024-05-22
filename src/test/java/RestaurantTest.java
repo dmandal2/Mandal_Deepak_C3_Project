@@ -48,7 +48,25 @@ class RestaurantTest {
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+   //>>>>>>>>>>>>>>>>>>>>>>>>ORDER TOTAL<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    @Test
+    public void calculate_order_total_should_return_correct_total_value_for_given_items() {
+        int total = restaurant.calculateOrderTotal(Arrays.asList("Sweet corn soup", "Vegetable lasagne"));
+        assertEquals(400, total);
+    }
 
+    @Test
+    public void calculate_order_total_should_return_zero_if_no_items_provided() {
+        int total = restaurant.calculateOrderTotal(Arrays.asList());
+        assertEquals(0, total);
+    }
+
+    @Test
+    public void calculate_order_total_should_return_correct_total_value_for_single_item() {
+        int total = restaurant.calculateOrderTotal(Arrays.asList("Sizzling brownie"));
+        assertEquals(319, total);
+    }
+    //<<<<<<<<<<<<<<<<<<<<<<<ORDER TOTAL>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     @Test
     public void adding_item_to_menu_should_increase_menu_size_by_1(){
